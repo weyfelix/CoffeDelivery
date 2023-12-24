@@ -1,12 +1,15 @@
 import { ThemeProvider } from "styled-components"
 import { defaultTheme } from "../styles/themes/default"
 import { GlobalStyle } from "../styles/global"
+import { Text } from "../components/Text"
 
 export function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={defaultTheme} >
       <GlobalStyle />
-        <h1>hello world!</h1>
+        <Text size="xl" family="Roboto">
+          Hello Word!
+        </Text>
     </ThemeProvider>
   )
 }

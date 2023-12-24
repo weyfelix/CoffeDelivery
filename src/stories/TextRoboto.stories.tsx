@@ -1,26 +1,26 @@
 import {Meta, StoryObj} from '@storybook/react' 
-import {Text, TextProps} from '../components/Text'
+import {Text, TextProps} from '../components/TextRoboto'
 
 export default {
-  title: 'components/Text',
+  title: 'components/TextRoboto',
   component: Text,
   args: {
     children: 'Loren ipson..',
     size: 'm',
-    family: 'Roboto'
+    vWeight: 'Regular'
   },
   argTypes: {
     size: {
-      options: ['xl', 'l' , 'm' , 's' , 'xs'],
+      options: ['l' , 'm' , 's' , 'xs'],
       control: {
         type: 'inline-radio'
       }
     },
-    family: {
-          options: ['Baloo', 'Roboto'],
-          control: {
-            type: 'inline-radio'
-          }
+    vWeight: {
+      options: ['Regular', 'Bold'],
+      control: {
+        type: 'inline-radio'
+      }
     }
   }
 } as Meta<TextProps>

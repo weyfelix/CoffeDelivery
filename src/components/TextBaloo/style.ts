@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export type TextElementSize = 'xl' | 'l' | 'm' | 's' | 'xs';
-export type TextElementFamily = 'Baloo' | 'Roboto';
+export type TextElementWeight = 'ExtraBold' | 'Bold'
 
 interface TextElementProps {
   variant: TextElementSize;
-  family: TextElementFamily;
+  vWeight: TextElementWeight
 }
 
 const textSize = {
@@ -16,19 +16,22 @@ const textSize = {
   xs: '1.125rem' 
 } as const
 
-const textFamily = {
-  Baloo: 'Baloo 2',
-  Roboto: 'Roboto'
+
+const textWeight = {
+  Bold: 700,
+  ExtraBold: 800
 } as const
+
 
 
 export const TextElement = styled.p<TextElementProps>`
   line-height: 130%;
+  font-family: 'Baloo 2', 'sans-serif';
   ${props => {
     return (
       `
-      font-family: '${textFamily[props.family]}', 'sans-serif';
-      font-size: ${textSize[props.variant]}
+      font-size: ${textSize[props.variant]};
+      font-weight: ${textWeight[props.vWeight]};
       `
     )
   }}

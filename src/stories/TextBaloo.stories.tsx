@@ -1,13 +1,13 @@
 import {Meta, StoryObj} from '@storybook/react' 
-import {Text, TextProps} from '../components/Text'
+import {Text, TextProps} from '../components/TextBaloo'
 
 export default {
-  title: 'components/Text',
+  title: 'components/TextBaloo',
   component: Text,
   args: {
     children: 'Loren ipson..',
     size: 'm',
-    family: 'Roboto'
+    vWeight: 'Bold'
   },
   argTypes: {
     size: {
@@ -16,11 +16,11 @@ export default {
         type: 'inline-radio'
       }
     },
-    family: {
-          options: ['Baloo', 'Roboto'],
-          control: {
-            type: 'inline-radio'
-          }
+    vWeight: {
+      options: ['ExtraBold', 'Bold'],
+      control: {
+        type: 'inline-radio'
+      }
     }
   }
 } as Meta<TextProps>

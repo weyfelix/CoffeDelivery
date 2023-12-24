@@ -1,5 +1,16 @@
-export function Text () {
+import { ReactNode } from "react";
+import { TextElement, TextElementSize, TextElementFamily } from "./style";
+
+export interface TextProps {
+  children: ReactNode;
+  size?: TextElementSize;
+  family?:TextElementFamily;
+}
+
+export function Text ({size = 'm', family='Roboto', children}: TextProps) {
   return (
-    <h1>Texto</h1>
+    <TextElement variant={size} family={family} >
+      {children}
+    </TextElement>
   )
 }
